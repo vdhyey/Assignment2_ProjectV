@@ -40,5 +40,13 @@ int main() {
 
 	readFile(studentDataVector);
 
-	return 1;
+#ifdef NDEBUG
+	cout << "Select Debug to print names";
+#else
+	for (STUDENT_DATA studentDataObject : studentDataVector) {
+		cout << studentDataObject.firstName;
+		cout << " ";
+		cout << studentDataObject.lastName << endl;
+	}
+#endif
 }
